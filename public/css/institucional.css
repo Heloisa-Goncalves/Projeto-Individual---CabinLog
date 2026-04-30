@@ -1,0 +1,280 @@
+body{
+ margin: 0;
+ padding-top: 80px;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  background-color: #6f90a0;
+}
+
+.navegacao {
+  list-style: none;   
+  display: flex;     
+  gap: 80px;          
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex: 1;
+}
+
+.navegacao a {
+  font-size: 25px;
+  text-decoration: none; 
+  color: white;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+.header {
+  display: flex;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  justify-content: center;
+  height: 80px;
+  background-color: #2c5364;
+  width: 100%;
+   z-index: 1000;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner {
+  width: 100%;
+  height: 400px;  
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.texto-banner {
+   position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 2;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display:block; 
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+}
+.texto-banner {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 9999;
+}
+
+.titulo-banner { /* bem vindo */
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+/* SUBTÍTULO (normal) */
+.secao-func {
+ padding-left: 50px;
+  padding-right: 50px;
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+}
+
+.container-func {
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(to right, rgb(105, 105, 109), rgb(44, 64, 130));
+  padding: 10px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+
+}
+
+.video-func {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+   border: 3px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.texto-func {
+padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  
+}
+
+.titulo-func {
+padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+.sub-func {
+display: flex;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: azure;
+}
+
+
+
+.sub-banner {
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.secao-sobre { /* secao do inicio */
+    padding-left: 50px;
+  padding-right: 50px;
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+
+}
+
+.img-sobre { /* IMAGEM SPTECH*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+   width: 400px;
+  height: auto;
+  margin-left: auto;
+ 
+  
+}
+
+.container-sobre {
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(to right, rgb(105, 105, 109), rgb(44, 64, 130));
+  padding: 10px;
+
+}
+
+.titulo-texto {  /* titulo cabinlog */
+  padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+.sub-secao {  /* texto do inicio */
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: azure;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  padding: 0 40px;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #203a43;
+}
+
+
+.acessos {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.acessos a {
+  text-decoration: none;
+  padding: 8px 18px;
+
+  border-radius: 999px; 
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.img1 {
+  display: flex;
+  align-items:self-end;
+  background-position: center;
+  background-size: cover;
+}
+
+#aviao {
+  max-width: 1000%;
+  max-height: 1010%;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.acessos .login {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+}
+
+.acessos .cadastro {
+  background: white;
+  color: #2c5364;
+  border: none;
+}
+
+.acessos a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
