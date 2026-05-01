@@ -98,24 +98,22 @@ body{
  padding-left: 50px;
   padding-right: 50px;
    display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 50px;
   gap: 40px;
 }
 
 .container-func {
-  border: 2px solid white;
-  border-radius: 50px;
-  color: white;
-  background: linear-gradient(to right, rgb(105, 105, 109), rgb(44, 64, 130));
-  padding: 10px;
   display: flex;
-  gap: 40px;
+  gap: 120px;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px 60px;
+  display: flex;
+  border: none;        /* remove borda */
+  background: none;    /* remove fundo */
+  border-radius: 0;    /* remove arredondado */
 
+  padding: 0;          /* remove espaçamento da caixa */
 }
 
 .video-func {
@@ -133,21 +131,25 @@ padding-right: 50px;
   font-weight: 700;
   font-size: 42px;
   
+  
 }
 
 .titulo-func {
 padding-right: 50px;
+color: azure;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
+  margin-left: auto;
   font-size: 42px;
 }
 
 .sub-func {
-display: flex;
   font-family: Arial, sans-serif;
-  font-weight: 400;
   font-size: 20px;
   color: azure;
+  line-height: 1.6;
+ font-weight: 400;
+  max-width: 500px;
 }
 
 
