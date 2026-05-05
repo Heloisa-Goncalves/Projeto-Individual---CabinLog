@@ -103,7 +103,12 @@ body{
   padding: 50px;
   gap: 40px;
 }
-
+.texto-func {
+padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+}
 .container-func {
   display: flex;
   gap: 120px;
@@ -125,14 +130,7 @@ body{
   box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
-.texto-func {
-padding-right: 50px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 42px;
-  
-  
-}
+
 
 .titulo-func {
 padding-right: 50px;
@@ -180,9 +178,36 @@ color: azure;
   gap: 40px;
    width: 400px;
   height: auto;
-  margin-left: auto;
- 
-  
+  margin-left: auto; 
+}
+
+.mim {
+  display: flex;
+  justify-content: flex-end; /* joga pra esquerda */
+  padding-right: 50px; /* espaço da parede */
+}
+
+.mim img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+}
+
+.secao-mim {
+ padding-left: 50px;
+  padding-left: 50px;
+   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+}
+.texto-mim {
+padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 12px;
 }
 
 .container-sobre {
