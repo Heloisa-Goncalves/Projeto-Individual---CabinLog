@@ -22,7 +22,26 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function postar(titulo, conteudo, descricao, idUsuario){
+     var instrucaoSql = `
+        INSERT INTO postagem (titulo, conteudo, dataHora, descricao, idUsuario) VALUES 
+        ('${titulo}', '${conteudo}', default, '${descricao}', '${idUsuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function comentar(mensagem, idUsuario, idPostagem){
+     var instrucaoSql = `
+        INSERT INTO comentario (mensagem, idUsuario, idPostagem) VALUES 
+        ('${mensagem}', '${idPostagem}', '${idUsuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    postar,
+    comentar
 };

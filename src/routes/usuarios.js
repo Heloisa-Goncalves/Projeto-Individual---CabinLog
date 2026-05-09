@@ -12,6 +12,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/postar", function (req, res) {
+    usuarioController.postar(req, res);
+})
 
+router.post("/comentar", function (req, res) {
+    usuarioController.comentar(req, res);
+})
 
 module.exports = router;

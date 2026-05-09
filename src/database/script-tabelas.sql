@@ -15,7 +15,7 @@ CREATE TABLE postagem (
 idPostagem INT PRIMARY KEY AUTO_INCREMENT,
 titulo VARCHAR(300),
 conteudo VARCHAR(45),
-dataHora DATETIME,
+dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,
 descricao VARCHAR(300),
 idUsuario INT,
 FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario)
@@ -37,10 +37,3 @@ FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
 idPostagem INT,
 FOREIGN KEY (idPostagem) REFERENCES postagem(idPostagem)
 );
-
-
-
-
-
-
-

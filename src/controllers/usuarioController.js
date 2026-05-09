@@ -1,5 +1,4 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -81,7 +80,59 @@ function cadastrar(req, res) {
     }
 }
 
+function postar(req, res){
+
+    var titulo = req.body.titulo
+    var conteudo = req.body.conteudo
+    var descricao = req.body.descricao
+    var idUsuario = req.body.idUsuario
+
+     usuarioModel.postar(titulo, conteudo, descricao, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
+function comentar(req, res){
+
+    var mensagem = req.body.mensagem
+    var idPostagem = req.body.idPostagem
+    var idUsuario = req.body.idUsuario
+
+
+
+     usuarioModel.comentar(mensagem, idUsuario, idPostagem)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    postar,
+    comentar
 }
