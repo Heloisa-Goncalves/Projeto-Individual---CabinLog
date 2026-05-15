@@ -20,4 +20,8 @@ router.post("/comentar", function (req, res) {
     usuarioController.comentar(req, res);
 })
 
+router.post("/curtir", function (req, res) {
+    usuarioController.curtir(req, res);
+})
+
 module.exports = router;

@@ -39,9 +39,19 @@ function comentar(mensagem, idUsuario, idPostagem){
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+function curtir(idUsuario, idPostagem){
+     var instrucaoSql = `
+        INSERT INTO curtida (idUsuario, idPostagem) VALUES 
+        ('${idPostagem}', '${idUsuario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     autenticar,
     cadastrar,
     postar,
-    comentar
+    comentar,
+    curtir
 };

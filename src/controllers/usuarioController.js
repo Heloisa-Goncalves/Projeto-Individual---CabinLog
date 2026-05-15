@@ -129,10 +129,34 @@ function comentar(req, res){
             );
 }
 
+function curtir(req, res){
+    
+    var idPostagem = req.body.idPostagem
+    var idUsuario = req.body.idUsuario
+
+
+     usuarioModel.curtir(idUsuario, idPostagem)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
 
 module.exports = {
     autenticar,
     cadastrar,
     postar,
-    comentar
+    comentar,
+    curtir
 }
