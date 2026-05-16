@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CabinLog | Feed</title>
+  <link rel="stylesheet" href="css/feed.css">
+</head>
+
+<body onload="carregarFeed()">
+
+  <header class="header">
+    <div class="logo">
+      <span>Cabin.</span>Log ✈
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="login.html">Sair</a>
+    </nav>
+  </header>
+
+  <main class="feed-container">
+    <h1 class="titulo-feed">Feed de Publicações ✈</h1>
+
+    <section id="feed" class="feed">
+      
+    </section>
+  </main>
+
+</body>
+</html>
+
+<script>
+  function carregarFeed() {
+    fetch("/postagens/getDadosPostagem")
+      .then(function (resposta) {
+        return resposta.json();
+      })
+      .then(function (postagens) {
+        feed.innerHTML = "";
+
+        for (let i = 0; i < postagens.length; i++) {
+          let post = postagens[i];
+
+          feed.innerHTML += `
+            <div class="post">
+              <div class="post-header">
+                <div class="avatar">✈</div>
+
+                <div>
+                  <h3>${post.titulo}</h3>
+                  <span>CabinLog</span>
+                </div>
+              </div>
+
+              <img class="post-img" src="assets/imgs/aviao.jpg" alt="Imagem de avião">
+
+              <div class="post-body">
+                <p class="conteudo">${post.conteudo}</p>
+                <p class="descricao">${post.descricao}</p>
+              </div>
+
+              <div class="post-acoes">
+                <button onclick="curtir(${post.idPostagem})">♡ Curtir</button>
+                <button onclick="mostrarComentario(${post.idPostagem})">💬 Comentar</button>
+              </div>
+
+              <div class="comentario-area" id="comentario_${post.idPostagem}">
+                <input id="input_comentario_${post.idPostagem}" placeholder="Escreva um comentário...">
+                <button onclick="comentar(${post.idPostagem})">Enviar</button>
+              </div>
+            </div>
+          `;
+        }
+      })
+      .catch(function (erro) {
+        console.log("Erro ao carregar feed:", erro);
+      });
+  }
+
+  function curtir(idPostagem) {
+    let idUsuario = sessionStorage.ID_USUARIO;
+
+    fetch("/usuarios/curtir", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idUsuario: idUsuario,
+        idPostagem: idPostagem
+      })
+    })
+    .then(function (resposta) {
+      if (resposta.ok) {
+        alert("Post curtido!");
+      } else {
+        alert("Erro ao curtir.");
+      }
+    });
+  }
+
+  function mostrarComentario(idPostagem) {
+    let area = document.getElementById(`comentario_${idPostagem}`);
+
+    if (area.style.display == "flex") {
+      area.style.display = "none";
+    } else {
+      area.style.display = "flex";
+    }
+  }
+
+  function comentar(idPostagem) {
+    let idUsuario = sessionStorage.ID_USUARIO;
+    let mensagem = document.getElementById(`input_comentario_${idPostagem}`).value;
+
+    if (mensagem == "") {
+      alert("Digite um comentário!");
+      return;
+    }
+
+    fetch("/usuarios/comentar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        mensagem: mensagem,
+        idUsuario: idUsuario,
+        idPostagem: idPostagem
+      })
+    })
+    .then(function (resposta) {
+      if (resposta.ok) {
+        alert("Comentário enviado!");
+        document.getElementById(`input_comentario_${idPostagem}`).value = "";
+      } else {
+        alert("Erro ao comentar.");
+      }
+    });
+  }
+</script>
