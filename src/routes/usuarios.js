@@ -24,4 +24,8 @@ router.post("/curtir", function (req, res) {
     usuarioController.curtir(req, res);
 })
 
+router.get("/usuarios/:idUsuario", function (req, res) {
+    usuarioController.getUsuario(req, res);
+})
+
 module.exports = router;

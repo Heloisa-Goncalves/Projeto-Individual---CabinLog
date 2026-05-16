@@ -34,7 +34,7 @@ function postar(titulo, conteudo, descricao, idUsuario){
 function comentar(mensagem, idUsuario, idPostagem){
      var instrucaoSql = `
         INSERT INTO comentario (mensagem, idUsuario, idPostagem) VALUES 
-        ('${mensagem}', '${idPostagem}', '${idUsuario}');
+        ('${mensagem}', '${idUsuario}', '${idPostagem}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -43,7 +43,15 @@ function comentar(mensagem, idUsuario, idPostagem){
 function curtir(idUsuario, idPostagem){
      var instrucaoSql = `
         INSERT INTO curtida (idUsuario, idPostagem) VALUES 
-        ('${idPostagem}', '${idUsuario}');
+        ('${idUsuario}', '${idPostagem}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function getUsuario(idUsuario){
+     var instrucaoSql = `
+        SELECT * FROM usuario WHERE idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -53,5 +61,6 @@ module.exports = {
     cadastrar,
     postar,
     comentar,
-    curtir
+    curtir,
+    getUsuario
 };
