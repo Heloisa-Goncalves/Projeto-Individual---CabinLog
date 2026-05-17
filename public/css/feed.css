@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f4f8fb;
+background: linear-gradient(to right, rgb(148, 148, 179), rgb(80, 134, 152));
   color: #23313a;
 }
 
@@ -15,7 +15,7 @@ body {
 .header {
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color: azure;
   border-bottom: 1px solid #d9e8f0;
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,8 @@ body {
 /* FEED */
 
 .feed-container {
-  max-width: 620px;
+  max-width: 600px;
+  height: 360px;
   margin: 100px auto 40px auto;
   padding: 0 15px;
 }
@@ -119,6 +120,7 @@ body {
   height: 360px;
   object-fit: cover;
   display: block;
+  object-fit: contain
 }
 
 .post-body {
@@ -199,3 +201,18 @@ body {
     height: 280px;
   }
 }
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}   
