@@ -134,7 +134,6 @@ function curtir(req, res){
     var idPostagem = req.body.idPostagem
     var idUsuario = req.body.idUsuario
 
-
      usuarioModel.curtir(idUsuario, idPostagem)
             .then(
                 function (resultado) {
@@ -152,11 +151,20 @@ function curtir(req, res){
             );
 }
 
+function getUsuario(req, res){
+    var idUsuario = req.params.idUsuario
+    usuarioModel.getUsuario(idUsuario)   
+        .then(function (resultado){
+                    res.status(200).json(resultado);
+    })  
+
+}
 
 module.exports = {
     autenticar,
     cadastrar,
     postar,
     comentar,
-    curtir
+    curtir,
+    getUsuario
 }
