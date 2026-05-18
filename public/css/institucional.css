@@ -85,7 +85,6 @@ body{
   font-size: 42px;
 }
 
-/* SUBTÍTULO */
 .sub-banner {
   display: flex;
   font-family: Arial, sans-serif;
@@ -93,20 +92,14 @@ body{
   font-size: 20px;
 }
 
-/* =========================
-   🔥 AQUI ESTÁ A MUDANÇA
-   ESPAÇAMENTO ENTRE ITENS
-========================= */
-
 .secao-sobre,
 .container-func,
 .secao-mim {
   display: flex;
-  gap: 60px; /* <<< ISSO CRIA O "ITEM1    ITEM2" */
+  gap: 60px; 
   align-items: center;
 }
 
-/* SOBRE */
 .secao-sobre { 
   margin-top: 40px;
   padding-left: 50px;
@@ -146,8 +139,6 @@ body{
   height: auto;
   margin-left: auto; 
 }
-
-/* FUNCIONALIDADES */
 
 .secao-func {
   display: flex;
@@ -195,8 +186,6 @@ body{
   font-weight: 400;
 }
 
-/* SOBRE MIM */
-
 .secao-mim {
   display: flex;
   align-items: center;
@@ -224,7 +213,6 @@ body{
   font-size: 12px;
 }
 
-/* HEADER */
 
 .header-container {
   display: flex;
@@ -278,8 +266,6 @@ body{
   transform: scale(1.05);
   opacity: 0.9;
 }
-
-/* EXTRA */
 
 .img1 {
   display: flex;

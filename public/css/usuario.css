@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6fb;
+  color: #333;
+}
+
+.header {
+  height: 80px;
+  background-color: rgb(59, 52, 112);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  color: white;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: cornflowerblue;
+}
+
+.menu {
+   display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu a {
+   background-color: azure;
+  color: blueviolet;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px; 
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.perfil-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.perfil-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.foto-perfil img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgb(59, 52, 112);
+}
+
+.info-perfil h1 {
+  font-size: 32px;
+  color: rgb(59, 52, 112);
+}
+
+.info-perfil p {
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.bio {
+  max-width: 550px;
+  line-height: 1.5;
+}
+
+.dados {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.botao-editar {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(59, 52, 112);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botao-publicar {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(59, 52, 112);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.titulo-posts {
+  margin: 40px 0 20px;
+  color: rgb(59, 52, 112);
+}
+
+.posts-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.post {
+  background-color: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.post img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 15px;
+  background-color: #eee;
+}
+
+.post h3 {
+  margin-top: 15px;
+  color: rgb(59, 52, 112);
+}
+
+.post p {
+  margin-top: 8px;
+  line-height: 1.5;
+}
